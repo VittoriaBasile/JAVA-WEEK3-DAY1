@@ -17,8 +17,8 @@ public class Application {
 
 		Student student1 = new Student("Mario", "Rossi", 'm', data1, 5.5, 9.0);
 		Student student2 = new Student("Maria", "Rossi", 'f', data2, 7.5, 8.0);
-		Student student3 = new Student("Mario", "Rossi", 'm', data3, 6, 7);
-		Student student4 = new Student("Mario", "Rossi", 'm', data4, 6.5, 9.5);
+		Student student3 = new Student("Giovanni", "Bianchi", 'm', data3, 6, 7);
+		Student student4 = new Student("Giuseppe", "Verdi", 'm', data4, 6.5, 9.5);
 
 		try {
 			String url = "jdbc:postgresql://localhost:5433/java-week3-day1?useSSL=false";
