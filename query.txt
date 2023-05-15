@@ -22,3 +22,38 @@ SELECT  EXTRACT(YEAR FROM data_fattura) AS anno, COUNT(*)
 FROM public.fatture
 WHERE iva = 20
 GROUP BY data_fattura;
+6.
+SELECT  EXTRACT(YEAR FROM data_fattura)
+
+	FROM public.fatture
+	WHERE (tipologia = 'A' )
+	GROUP BY  data_fattura
+	HAVING COUNT(*) > 2;
+7.
+SELECT fatture.numero_fattura, fatture.importo, fatture.iva, fatture.data_fattura, fatture.id_fornitore, fornitori.numero_fornitore
+FROM public.fatture 
+JOIN fornitori ON fatture.id_fornitore = fornitori.numero_fornitore;
+8.
+SELECT clienti.regione_residenza,
+COUNT (f.importo)
+FROM public.fatture AS f
+JOIN clienti ON f.id_cliente = clienti.numero_cliente
+
+GROUP BY clienti.regione_residenza
+8.
+SELECT clienti.regione_residenza,
+SUM(f.importo)
+FROM public.fatture AS f
+JOIN clienti ON f.id_cliente = clienti.numero_cliente
+
+GROUP BY clienti.regione_residenza
+9.
+SELECT 
+COUNT (f.id_cliente)
+FROM public.fatture AS f
+JOIN clienti ON f.id_cliente = clienti.numero_cliente
+WHERE EXTRACT(YEAR FROM clienti.data_nascita) = 1980  AND f.importo > 50
+10.
+SELECT CONCAT(c.nome, '-', c.cognome) AS denominazione
+FROM public.clienti AS c
+WHERE c.regione_residenza = 'Lombardia'
