@@ -76,7 +76,8 @@ public class Student {
 		this.avg = avg;
 	}
 
-	public Student(String name, String lastName, char gender, Date birthDate, double minVote, double maxVote) {
+	public Student(int id, String name, String lastName, char gender, Date birthDate, double minVote, double maxVote) {
+		setId(id);
 		setName(name);
 		setLastName(lastName);
 		setGender(gender);
