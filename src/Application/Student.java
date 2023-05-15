@@ -1,11 +1,13 @@
 package Application;
 
+import java.sql.Date;
+
 public class Student {
 	private int id;
 	private String name;
 	private String lastName;
 	private char gender;
-	private String birthDate;
+	private Date birthDate;
 	private double minVote;
 	private double maxVote;
 	private double avg;
@@ -42,11 +44,11 @@ public class Student {
 		this.gender = gender;
 	}
 
-	public String getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(String birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -74,7 +76,7 @@ public class Student {
 		this.avg = avg;
 	}
 
-	public Student(String name, String lastName, char gender, String birthDate, double minVote, double maxVote) {
+	public Student(String name, String lastName, char gender, Date birthDate, double minVote, double maxVote) {
 		setName(name);
 		setLastName(lastName);
 		setGender(gender);
